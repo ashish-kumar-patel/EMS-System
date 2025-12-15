@@ -1,0 +1,36 @@
+
+/* Remove button borders and background */
+.btn-link {
+  color: #eae8e8;
+}
+
+.btn-link:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Adjust badge size */
+.badge {
+  font-size: 0.7rem;
+}
+/* Navbar background */
+.navbar {
+  background: linear-gradient(180deg, #1e3a8a, #2563eb);
+  
+  height: 70px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+/* light blue */
+}
+
+.logo-img{
+     height:50px;
+  width: auto;
+  display: block;
+  mix-blend-mode: multiply;
+}

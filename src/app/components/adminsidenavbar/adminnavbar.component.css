@@ -1,0 +1,58 @@
+.side-nav {
+  width: 70px;
+  height: calc(100vh - 70px);   /* FULL HEIGHT MINUS NAVBAR */
+  margin-top: 70px;            /* START BELOW NAVBAR */
+background: linear-gradient(180deg, #1e3a8a, #2563eb);
+  position: fixed;
+  left: 0;
+  top: 0;
+  transition: width 0.3s ease;
+  overflow: hidden;
+}
+
+.side-nav:hover {
+  width: 220px;
+}
+
+
+.side-nav:hover {
+  width: 220px;
+}
+
+.nav-item {
+  color: #fff;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.nav-item i {
+  font-size: 22px;
+  min-width: 24px;
+  text-align: center;
+}
+
+.nav-text {
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.side-nav:hover .nav-text {
+  opacity: 1;
+}
+
+.profile {
+  font-size: 26px;
+  padding: 25px 18px;
+}
+
+.bottom {
+  margin-top: auto;
+}

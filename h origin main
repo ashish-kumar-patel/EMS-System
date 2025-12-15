@@ -1,0 +1,12 @@
+warning: in the working copy of '.gitignore', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/.gitignore b/.gitignore[m
+[1mindex 0711527..ed4c1dd 100644[m
+[1m--- a/.gitignore[m
+[1m+++ b/.gitignore[m
+[36m@@ -40,3 +40,6 @@[m [mtestem.log[m
+ # System files[m
+ .DS_Store[m
+ Thumbs.db[m
+[41m+[m
+[41m+[m
+[41m+[m

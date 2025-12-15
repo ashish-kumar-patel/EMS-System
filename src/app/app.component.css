@@ -1,0 +1,11 @@
+.app-layout {
+  display: flex;
+}
+
+.main-content {
+  margin-top: 70px;     /* space for top navbar */
+  margin-left: 70px;   /* space for side nav */
+  padding: 20px;
+  width: calc(100% - 70px);
+  transition: margin-left 0.3s ease;
+}

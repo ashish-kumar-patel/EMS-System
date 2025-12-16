@@ -1,9 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClient,HttpClientModule } from '@angular/common/http';
 // Angular Material imports
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
@@ -16,6 +21,8 @@ import { AdminnavbarComponent } from './components/adminsidenavbar/adminnavbar.c
 import { EmployeenavbarComponent } from './components/employeesidenavbar/employeenavbar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
+import { RegisterempComponent } from './components/registeremp/registeremp.component';
+// import { MatNativeDateModule } from '@angular/material/core';
 
 
 @NgModule({
@@ -24,16 +31,22 @@ import { ToastrModule } from 'ngx-toastr';
     LoginComponent,
     NavbarComponent,
     AdminnavbarComponent,
-    EmployeenavbarComponent
+    EmployeenavbarComponent,
+    RegisterempComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule, // Required for Angular Material
-    MatFormFieldModule,
     MatInputModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     MatButtonModule,
+    MatRadioModule,
+    MatCheckboxModule,
     ToastrModule.forRoot({
       timeOut: 2000,           // Toast duration in ms
       positionClass: 'toast-bottom-right', // Position: see list below

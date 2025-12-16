@@ -1,0 +1,232 @@
+<div class="container mt-4  d-flex justify-content-center">
+    <div class="card p-3" style="background-color: #f8f9fa; width: 80%; position: relative;">
+
+        <!-- Close Icon -->
+        <div class="d-flex  justify-content-end m-2">
+            <button type="button" class="btn-close " style="height: 30px; width: 30px;" aria-label="Close"
+                (click)="closeForm()"></button>
+
+        </div>
+
+        <form [formGroup]="empForm" (ngSubmit)="submit()">
+
+            <!-- PERSONAL DETAILS -->
+            <fieldset class="p-3 mb-3 border rounded shadow-sm">
+                <legend style="font-weight: 500; font-size: 1rem; padding:0; margin-bottom:0; margin-left:5px;">Personal
+                    Details</legend>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label>First Name <span class="text-danger">*</span></label>
+                        <input class="form-control" formControlName="firstName" placeholder="Enter First Name">
+                        <small class="text-danger"
+                            *ngIf="empForm.get('firstName')?.touched && empForm.get('firstName')?.invalid">
+                            First Name is required
+                        </small>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Last Name</label>
+                        <input class="form-control" formControlName="lastName" placeholder="Enter Last Name">
+
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Gender <span class="text-danger">*</span></label>
+                        <select class="form-select" formControlName="gender">
+                            <option value="">Select Gender</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                        </select>
+                        <small class="text-danger"
+                            *ngIf="empForm.get('gender')?.touched && empForm.get('gender')?.invalid">
+                            Gender is required
+                        </small>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Date of Birth <span class="text-danger">*</span></label>
+                        <input type="date" class="form-control" formControlName="dateOfBirth">
+                        <small class="text-danger"
+                            *ngIf="empForm.get('dateOfBirth')?.touched && empForm.get('dateOfBirth')?.invalid">
+                            Date of Birth is required
+                        </small>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- CONTACT DETAILS -->
+            <fieldset class="p-3 mb-3 border rounded shadow-sm">
+                <legend style="font-weight: 500; font-size: 1rem; padding:0; margin-bottom:0; margin-left:5px;">Contact
+                    Details</legend>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label>Email <span class="text-danger">*</span></label>
+                        <input type="email" class="form-control" formControlName="email" placeholder="Enter Email">
+                        <small class="text-danger"
+                            *ngIf="empForm.get('email')?.touched && empForm.get('email')?.invalid">
+                            Enter a valid email
+                        </small>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Mobile No <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" formControlName="mobileNo"
+                            placeholder="Enter Mobile No">
+                        <small class="text-danger"
+                            *ngIf="empForm.get('mobileNo')?.touched && empForm.get('mobileNo')?.invalid">
+                            Enter valid 10-digit mobile number
+                        </small>
+                    </div>
+
+
+
+                </div>
+            </fieldset>
+
+            <!-- ADDRESS DETAILS -->
+            <fieldset class="p-3 mb-3 border rounded shadow-sm">
+                <legend style="font-weight: 500; font-size: 1rem; padding:0; margin-bottom:0; margin-left:5px;">Address
+                    Details</legend>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label>Address Line 1 </label>
+                        <input class="form-control" formControlName="addressLane1" placeholder="Address Line 1">
+                    </div>
+                    <div class="col-md-6">
+                        <label>Address Line 2</label>
+                        <input class="form-control" formControlName="addressLane2" placeholder="Address Line 2">
+                    </div>
+                    <div class="col-md-6">
+                        <label>City</label>
+                        <input class="form-control" formControlName="city" placeholder="City">
+                    </div>
+                    <div class="col-md-6">
+                        <label>State</label>
+                        <input class="form-control" formControlName="state" placeholder="State">
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- DOCUMENT DETAILS -->
+            <fieldset class="p-3 mb-3 border rounded shadow-sm">
+                <legend style="font-weight: 500; font-size: 1rem; padding:0; margin-bottom:0; margin-left:5px;">Document
+                    Details</legend>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label>Aadhar No</label>
+                        <input class="form-control" formControlName="aadharNo" placeholder="Aadhar Number">
+                    </div>
+                    <div class="col-md-6">
+                        <label>PAN No</label>
+                        <input class="form-control" formControlName="panNo" placeholder="PAN Number">
+                    </div>
+                    <div class="col-md-6">
+                        <label>Passport No</label>
+                        <input class="form-control" formControlName="passportNo" placeholder="Passport Number">
+                    </div>
+                    <div class="col-md-6">
+                        <label>Passport Expiry</label>
+                        <input type="date" class="form-control" formControlName="passportExpDate">
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- BANK DETAILS -->
+            <fieldset class="p-3 mb-3 border rounded shadow-sm">
+                <legend style="font-weight: 500; font-size: 1rem; padding:0; margin-bottom:0; margin-left:5px;">Bank
+                    Details</legend>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label>Bank Name</label>
+                        <input class="form-control" formControlName="salaryBank" placeholder="Bank Name">
+                    </div>
+                    <div class="col-md-6">
+                        <label>Account Number </label>
+                        <input class="form-control" formControlName="accountNumber" placeholder="Account Number">
+                    </div>
+                    <div class="col-md-6">
+                        <label>IFSC Code </label>
+                        <input class="form-control" formControlName="ifscCode" placeholder="IFSC Code">
+                    </div>
+                    <div class="col-md-6">
+                        <label>Account Type </label>
+                        <select class="form-select" formControlName="accountType">
+                            <option value="">Select Account Type</option>
+                            <option>Savings</option>
+                            <option>Current</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- ROLE & STATUS -->
+            <fieldset class="p-3 mb-3 border rounded shadow-sm">
+                <legend style="font-weight: 500; font-size: 1rem; padding:0; margin-bottom:0; margin-left:5px;">Role &
+                    Status</legend>
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label>Role <span class="text-danger">*</span></label>
+                        <select class="form-select" formControlName="role">
+                            <option value="">Select Role</option>
+                            <option *ngFor="let r of roles">{{ r }}</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label>Designation <span class="text-danger">*</span></label>
+                        <select class="form-select" formControlName="designation">
+                            <option value="">Designation</option>
+                            <option *ngFor="let d of designations">{{ d }}</option>
+                        </select>
+                    </div>
+                      <div class="col-md-4">
+                        <label>Department <span class="text-danger">*</span></label>
+                        <select class="form-select" formControlName="department">
+                            <option value="">Department</option>
+                            <option *ngFor="let de of departments">{{ de }}</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label>Reporting Manager <span class="text-danger">*</span></label>
+                        <select class="form-select" formControlName="reportingManager">
+                            <option value="">Reporting Manager</option>
+                            <option *ngFor="let m of managers">{{ m }}</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label>Joining Date <span class="text-danger">*</span></label>
+                        <input type="date" class="form-control" formControlName="joiningDate">
+                        <small class="text-danger"
+                            *ngIf="empForm.get('joiningDate')?.touched && empForm.get('joiningDate')?.invalid">
+                            Joining Date is required
+                        </small>
+                    </div>
+                    <div class="col-md-4">
+                        <label>Is Active <span class="text-danger">*</span></label>
+                        <select class="form-select" formControlName="isActive">
+                            <option value="">Select Status</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Upload Profile</label>
+                        <input type="file" class="form-control" (change)="onFileChange($event)">
+                    </div>
+
+
+                </div>
+            </fieldset>
+            <div class="col-12 text-center mt-3">
+                <button class="btn btn-primary px-5 mx-5" type="submit" [disabled]="empForm.invalid">
+                    Register Employee
+                </button>
+
+                 <button class="btn btn-primary px-5"  (click)="closeForm()" type="button"  >
+                   Close
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

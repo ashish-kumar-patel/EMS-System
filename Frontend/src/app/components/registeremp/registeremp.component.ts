@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
-import { Employee } from '../../Interface/registeremp';
-import { RegisterempserviceService } from '../../services/registerempservice.service';
+
+import { Employee } from '@interfaces/registeremp'
+import { RegisterempserviceService } from '@services/registerempservice.service';
+
 
 @Component({
   selector: 'app-registeremp',

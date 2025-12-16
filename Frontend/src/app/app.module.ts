@@ -15,13 +15,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './components/login/login.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { AdminnavbarComponent } from './components/adminsidenavbar/adminnavbar.component';
-import { EmployeenavbarComponent } from './components/employeesidenavbar/employeenavbar.component';
+import { LoginComponent } from './auth/login/login.component'; 
+import { NavbarComponent } from './core/navbar/navbar.component';
+import { AdminnavbarComponent } from './components/admin/adminsidenavbar/adminnavbar.component';
+import { EmployeenavbarComponent } from './components/employee/employeesidenavbar/employeenavbar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { RegisterempComponent } from './components/registeremp/registeremp.component';
+import { EmpdashboardComponent } from './components/employee/empdashboard/empdashboard.component';
 // import { MatNativeDateModule } from '@angular/material/core';
 
 
@@ -32,7 +33,8 @@ import { RegisterempComponent } from './components/registeremp/registeremp.compo
     NavbarComponent,
     AdminnavbarComponent,
     EmployeenavbarComponent,
-    RegisterempComponent
+    RegisterempComponent,
+    EmpdashboardComponent
   ],
   imports: [
     BrowserModule,

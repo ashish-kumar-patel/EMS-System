@@ -23,6 +23,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { RegisterempComponent } from './components/registeremp/registeremp.component';
 import { EmpdashboardComponent } from './components/employee/empdashboard/empdashboard.component';
+import { AdmindashboadComponent } from './components/admin/admindashboad/admindashboad.component';
 // import { MatNativeDateModule } from '@angular/material/core';
 
 
@@ -34,7 +35,8 @@ import { EmpdashboardComponent } from './components/employee/empdashboard/empdas
     AdminnavbarComponent,
     EmployeenavbarComponent,
     RegisterempComponent,
-    EmpdashboardComponent
+    EmpdashboardComponent,
+    AdmindashboadComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,11 @@
+<div class="app-layout">
+
+  <!-- Show admin or employee navbar -->
+  <app-adminnavbar *ngIf="role === 'ADMIN'"></app-adminnavbar>
+  <app-employeenavbar *ngIf="role === 'EMPLOYEE'"></app-employeenavbar>
+
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>

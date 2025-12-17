@@ -1,0 +1,60 @@
+/* Wrapper for 80% width */
+.dashboard-wrapper {
+  width: 80%;
+  margin: auto;
+}
+
+/* Mobile full width */
+@media (max-width: 768px) {
+  .dashboard-wrapper {
+    width: 100%;
+    padding: 0 10px;
+  }
+}
+
+
+.employees-page {
+  background: #f5f7fb;
+}
+
+.search-card {
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  border: none;
+}
+
+.emp-card {
+  border-radius: 18px;
+  border: none;
+  transition: all .3s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.emp-card:hover {
+  transform: translateY(-5px);
+}
+
+.emp-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+}
+
+.emp-menu {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.exp {
+  color: #6c757d;
+  font-size: 13px;
+}
+
+.list-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}

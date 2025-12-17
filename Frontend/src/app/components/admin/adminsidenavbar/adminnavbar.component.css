@@ -2,7 +2,7 @@
   width: 70px;
   height: calc(100vh - 70px);   /* FULL HEIGHT MINUS NAVBAR */
   margin-top: 70px;            /* START BELOW NAVBAR */
-background: linear-gradient(180deg, #1e3a8a, #2563eb);
+  background: linear-gradient(180deg, #9b4444, #ca1824);
   position: fixed;
   left: 0;
   top: 0;

@@ -26,8 +26,12 @@ export class LoginComponent {
   }
 
   onSubmit() {
+     const role = 'ADMIN'; // or EMPLOYEE (from backend)
+
+  localStorage.setItem('role', role);
     this.submitted = true;
     if (this.loginForm.valid) {
+      
      
       console.log('Form Value:', this.loginForm.value);
         this.toaster.success('You have logged in successfully!', 'Login Success');

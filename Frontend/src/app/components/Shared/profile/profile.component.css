@@ -1,0 +1,53 @@
+.profile-page {
+  background: #f5f7fb;
+  padding: 20px;
+}
+
+.profile-header {
+  border-radius: 16px;
+}
+
+.profile-pic-wrapper {
+  position: relative;
+}
+
+.profile-pic {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+}
+
+.camera-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+  padding: 6px 8px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 12px;
+  font-size: 14px;
+}
+
+.nav-tabs .nav-link {
+  cursor: pointer;
+}
+
+.card {
+  border-radius: 14px;
+}
+
+
+.demo{
+   background: linear-gradient(
+    135deg,
+    #234E45 0%,
+    #2F6B5F 45%,
+    #6FAF9B 100%
+  );
+  color: #ffffff;
+}

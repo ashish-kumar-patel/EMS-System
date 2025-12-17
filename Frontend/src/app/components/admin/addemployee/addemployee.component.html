@@ -1,0 +1,131 @@
+<div class="dashboard-wrapper">
+    <div class="container-fluid py-4 employees-page">
+
+        <!-- HEADER -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3 class="fw-bold">Employees</h3>
+
+            <div class="d-flex gap-2">
+                <button class="btn btn-outline-secondary" (click)="toggleView('grid')">
+                    <i class="bi bi-grid"></i>
+                </button>
+                <button class="btn btn-outline-secondary" (click)="toggleView('list')">
+                    <i class="bi bi-list"></i>
+                </button>
+                <button class="btn btn-primary px-4">
+                    <i class="bi bi-plus-lg me-1"></i> Add Employee
+                </button>
+            </div>
+        </div>
+
+        <!-- SEARCH & FILTER -->
+        <form [formGroup]="filterForm" class="card search-card mb-4">
+            <div class="card-body">
+                <div class="row g-3">
+
+                    <div class="col-md-2">
+                        <input class="form-control" placeholder="Employee ID" formControlName="id">
+                    </div>
+
+                    <div class="col-md-2">
+                        <input class="form-control" placeholder="Employee Name" formControlName="name">
+                    </div>
+
+                    <div class="col-md-2">
+                        <select class="form-select" formControlName="designation">
+                            <option value="">Designation</option>
+                            <option>Trainee Engineer</option>
+                            <option>Senior Software</option>
+                            <option>Tech Lead</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-2">
+                        <select class="form-select" formControlName="department">
+                            <option value="">Department</option>
+                            <option>QA</option>
+                            <option>Tech</option>
+                            <option>Admin</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-2">
+                        <select class="form-select" formControlName="role">
+                            <option value="">Role</option>
+                            <option>Employee</option>
+                            <option>Lead</option>
+                            <option>Admin</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-2 d-flex gap-2">
+                        <button type="button" class="btn btn-outline-secondary w-100" (click)="resetFilter()">
+                            Reset
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+
+        <!-- EMPLOYEES GRID -->
+        <div class="row g-4" *ngIf="viewMode === 'grid'">
+            <div class="col-xl-3 col-lg-4 col-md-6" *ngFor="let emp of filteredEmployees">
+                <div class="card emp-card h-100">
+                    <div class="card-body text-center position-relative">
+
+                        <i class="bi bi-three-dots-vertical emp-menu"></i>
+
+                        <img [src]="emp.avatar" class="emp-avatar mb-3">
+
+                        <h6 class="fw-bold mb-1">{{ emp.name }}</h6>
+                        <small class="text-muted">{{ emp.designation }}</small>
+
+                        <div class="mt-2">
+                            <span class="badge bg-light text-dark me-1">
+                                {{ emp.department }}
+                            </span>
+                            <span class="badge bg-primary">
+                                {{ emp.role }}
+                            </span>
+                        </div>
+
+                        <div class="exp mt-3">
+                            <i class="bi bi-clock"></i>
+                            <small>{{ emp.experience }}</small>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LIST VIEW -->
+        <div *ngIf="viewMode === 'list'" class="card">
+            <table class="table table-hover align-middle mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th>Employee</th>
+                        <th>Designation</th>
+                        <th>Department</th>
+                        <th>Role</th>
+                        <th>Experience</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let emp of filteredEmployees">
+                        <td class="d-flex align-items-center gap-2">
+                            <img [src]="emp.avatar" class="list-avatar">
+                            {{ emp.name }}
+                        </td>
+                        <td>{{ emp.designation }}</td>
+                        <td>{{ emp.department }}</td>
+                        <td>{{ emp.role }}</td>
+                        <td>{{ emp.experience }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>

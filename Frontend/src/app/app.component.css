@@ -7,5 +7,10 @@
   margin-left: 70px;   /* space for side nav */
   padding: 20px;
   width: calc(100% - 70px);
+  height: 100vh;
   transition: margin-left 0.3s ease;
+ 
+  background:rgb(223, 212, 212)
+   
 }
+

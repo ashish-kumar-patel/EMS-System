@@ -4,9 +4,11 @@ import { LoginComponent } from './auth/login/login.component';
 import { AuthlayoutComponent } from './layout/authlayout/authlayout.component';
 import { MainlayoutComponent } from './layout/mainlayout/mainlayout.component';
 import { AdmindashboadComponent } from './components/admin/admindashboad/admindashboad.component';
-import { AddemployeeComponent } from './components/admin/addemployee/addemployee.component';
+import { AddemployeeComponent } from './components/admin/Allemployee/addemployee.component';
 import { ProfileComponent } from './components/Shared/profile/profile.component';
 import { EmpdashboardComponent } from './components/employee/empdashboard/empdashboard.component';
+import { AdminleaverequestComponent } from './components/admin/adminleaverequest/adminleaverequest.component';
+import { EmployeeleaveComponent } from './components/employee/employeeleave/employeeleave.component';
 
 const routes: Routes = [
 
@@ -26,8 +28,9 @@ const routes: Routes = [
     component: MainlayoutComponent,
     children: [
       { path: 'dashboard', component: AdmindashboadComponent },
-      { path: 'add-employee', component: AddemployeeComponent },
-      { path: 'profile', component: ProfileComponent }
+      { path: 'addemployee', component: AddemployeeComponent },
+      { path: 'profile', component: ProfileComponent },
+      {path:'leave', component:AdminleaverequestComponent}
     ]
   },
 
@@ -37,12 +40,13 @@ const routes: Routes = [
     component: MainlayoutComponent,
     children: [
       { path: 'dashboard', component: EmpdashboardComponent },
-      { path: 'profile', component: ProfileComponent }
+      { path: 'profile', component: ProfileComponent },
+       {path:'leave', component:EmployeeleaveComponent}
     ]
   },
 
   /* ---------- FALLBACK ---------- */
-  { path: '**', redirectTo: 'login' }
+  // { path: '**', redirectTo: 'login' }
 ];
 
 @NgModule({

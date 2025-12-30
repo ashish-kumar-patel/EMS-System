@@ -1,8 +1,8 @@
 /* Wrapper for 80% width */
-.dashboard-wrapper {
+/* .dashboard-wrapper {
   width: 80%;
   margin: auto;
-}
+} */
 
 /* Mobile full width */
 @media (max-width: 768px) {
@@ -13,9 +13,9 @@
 }
 
 
-.employees-page {
+/* .employees-page {
   background: #f5f7fb;
-}
+} */
 
 .search-card {
   border-radius: 16px;

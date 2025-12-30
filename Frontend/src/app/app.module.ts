@@ -24,10 +24,13 @@ import { ToastrModule } from 'ngx-toastr';
 import { RegisterempComponent } from './components/Shared/registeremp/registeremp.component';
 import { EmpdashboardComponent } from './components/employee/empdashboard/empdashboard.component';
 import { AdmindashboadComponent } from './components/admin/admindashboad/admindashboad.component';
-import { AddemployeeComponent } from './components/admin/addemployee/addemployee.component';
+import { AddemployeeComponent } from './components/admin/Allemployee/addemployee.component';
 import { ProfileComponent } from './components/Shared/profile/profile.component';
 import { AuthlayoutComponent } from './layout/authlayout/authlayout.component';
 import { MainlayoutComponent } from './layout/mainlayout/mainlayout.component';
+import { EmployeeleaveComponent } from './components/employee/employeeleave/employeeleave.component';
+import { LeavepopupComponent } from './components/employee/leavepopup/leavepopup.component';
+import { AdminleaverequestComponent } from './components/admin/adminleaverequest/adminleaverequest.component';
 // import { MatNativeDateModule } from '@angular/material/core';
 
 
@@ -44,7 +47,10 @@ import { MainlayoutComponent } from './layout/mainlayout/mainlayout.component';
     AddemployeeComponent,
     ProfileComponent,
     AuthlayoutComponent,
-    MainlayoutComponent
+    MainlayoutComponent,
+    EmployeeleaveComponent,
+    LeavepopupComponent,
+    AdminleaverequestComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +66,7 @@ import { MainlayoutComponent } from './layout/mainlayout/mainlayout.component';
     MatRadioModule,
     MatCheckboxModule,
     ToastrModule.forRoot({
-      timeOut: 2000,           // Toast duration in ms
+      timeOut: 1000,           // Toast duration in ms
       positionClass: 'toast-bottom-right', // Position: see list below
       preventDuplicates: true,       // Prevent showing the same toast multiple times
       progressBar: true,             // Show a progress bar

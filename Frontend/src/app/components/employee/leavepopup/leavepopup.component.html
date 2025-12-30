@@ -1,0 +1,70 @@
+<div class="overlay" (click)="close.emit()"></div>
+
+<div class="popup">
+  <button class="close-btn" (click)="close.emit()">✕</button>
+
+  <h4 class="mb-3 fw-bold">Apply Leave</h4>
+
+  <form [formGroup]="leaveForm" (ngSubmit)="submit()">
+
+    <div class="row g-3">
+
+      <div class="col-md-6">
+        <label>Employee *</label>
+        <input class="form-control" formControlName="employeeName">
+      </div>
+
+      <div class="col-md-6">
+        <label>Email *</label>
+        <input class="form-control" formControlName="email">
+      </div>
+
+      <div class="col-md-6">
+        <label>Leave Type *</label>
+        <select class="form-select" formControlName="leaveType">
+          <option value="">Select</option>
+          <option>Sick Leave</option>
+          <option>Casual Leave</option>
+          <option>Paid Leave</option>
+        </select>
+        <small *ngIf="leaveForm.get('leaveType')?.touched && leaveForm.get('leaveType')?.invalid"
+               class="text-danger">Required</small>
+      </div>
+
+      <div class="col-md-6">
+        <label>Manager *</label>
+        <select class="form-select" formControlName="manager">
+          <option value="">Select</option>
+          <option>Manager A</option>
+          <option>Manager B</option>
+        </select>
+        <small *ngIf="leaveForm.get('manager')?.touched && leaveForm.get('manager')?.invalid"
+               class="text-danger">Required</small>
+      </div>
+
+      <div class="col-md-6">
+        <label>From Date *</label>
+        <input type="date" class="form-control" formControlName="fromDate">
+      </div>
+
+      <div class="col-md-6">
+        <label>To Date *</label>
+        <input type="date" class="form-control" formControlName="toDate">
+      </div>
+
+      <div class="col-12">
+        <label>Reason *</label>
+        <textarea rows="3" class="form-control" formControlName="reason"></textarea>
+        <small *ngIf="leaveForm.get('reason')?.touched && leaveForm.get('reason')?.invalid"
+               class="text-danger">Minimum 5 characters</small>
+      </div>
+
+    </div>
+
+    <div class="text-end mt-3">
+      <button class="btn btn-secondary me-2" type="button" (click)="close.emit()">Cancel</button>
+      <button class="btn btn-success" type="submit">Submit</button>
+    </div>
+
+  </form>
+</div>

@@ -1,0 +1,47 @@
+<h3 class="mb-4 fw-bold">All Leave Requests</h3>
+
+<table class="table table-bordered table-hover text-center">
+  <thead class="table-dark">
+    <tr>
+      <th>Employee</th>
+      <th>Type</th>
+      <th>From</th>
+      <th>To</th>
+      <th>Manager</th>
+      <th>Reason</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let l of leaves">
+      <td>{{ l.employeeName }}</td>
+      <td>{{ l.leaveType }}</td>
+      <td>{{ l.fromDate }}</td>
+      <td>{{ l.toDate }}</td>
+      <td>{{ l.manager }}</td>
+      <td>{{ l.reason }}</td>
+      <td>
+        <span class="badge"
+            [ngClass]="{
+                    'bg-warning': l.status=='Pending',
+                    'bg-success': l.status=='Approved',
+                    'bg-danger': l.status=='Rejected'
+              }">
+          {{ l.status }}
+        </span>
+      </td>
+      <td>
+        <button class="btn btn-success btn-sm me-1"
+                (click)="update(l.id,'Approved')">
+          Approve
+        </button>
+        <button class="btn btn-danger btn-sm"
+                (click)="update(l.id,'Rejected')">
+          Reject
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

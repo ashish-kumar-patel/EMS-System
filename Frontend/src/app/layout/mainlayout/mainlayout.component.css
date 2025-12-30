@@ -1,0 +1,30 @@
+.main-content {
+  margin-top: 70px;
+  margin-left: 70px;
+  padding: 20px;
+  min-height: calc(100vh - 70px);
+  transition: margin-left 0.3s ease;
+ background: linear-gradient(135deg,#1f7a8c,#2ec4b6,#a8dadc);;
+  /* background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); */
+}
+
+/* When sidebar expands */
+.side-nav:hover ~ .main-content {
+  margin-left: 220px;
+}
+
+/* Tablet */
+@media(max-width: 992px){
+  .main-content{
+    margin-left: 60px;
+  }
+}
+
+/* Mobile */
+@media(max-width: 768px){
+  .main-content{
+    margin-left: 0;
+  }
+}

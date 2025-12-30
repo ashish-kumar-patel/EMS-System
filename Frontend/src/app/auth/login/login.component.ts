@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -8,15 +9,19 @@ import { ToastrModule, ToastrService } from 'ngx-toastr';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-   loginForm!: FormGroup;
+  loginForm!: FormGroup;
   submitted = false;
 
-  constructor(private fb: FormBuilder,private toaster:ToastrService) {}
+  // ✅ Static credentials
+  private readonly staticEmail = 'demo@gmail.com';
+  private readonly staticPassword = '1234';
+
+  constructor(private fb: FormBuilder, private toaster: ToastrService, private router: Router) { }
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      password: ['', [Validators.required, Validators.minLength(4)]]
     });
   }
 
@@ -26,16 +31,33 @@ export class LoginComponent {
   }
 
   onSubmit() {
-     const role = 'ADMIN'; // or EMPLOYEE (from backend)
+    var role = 'ADMIN'; // or EMPLOYEE (from backend) ADMIN
 
-  localStorage.setItem('role', role);
+    localStorage.setItem('role', role);
     this.submitted = true;
     if (this.loginForm.valid) {
-      
-     
-      console.log('Form Value:', this.loginForm.value);
-        this.toaster.success('You have logged in successfully!', 'Login Success');
-      // Add your login API call here
+      const { email, password } = this.loginForm.value;
+      if (email === this.staticEmail && password === this.staticPassword) {
+
+        
+        localStorage.setItem('role', role);
+
+        this.toaster.success('Login Successful', 'Success');
+        console.log('Form Value:', this.loginForm.value);
+
+        // ✅ Redirect to dashboard
+        if(role=='ADMIN')
+        this.router.navigate(['/admin/dashboard']);
+        else{
+           this.router.navigate(['/employee/dashboard']);
+        }
+      }
+      else {
+        this.toaster.error('Invalid Email or Password', 'Login Failed');
+      }
+
+
+
     }
   }
 

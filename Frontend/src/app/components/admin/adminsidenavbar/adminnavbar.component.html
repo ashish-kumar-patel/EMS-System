@@ -1,26 +1,48 @@
 <nav class="side-nav">
   <div class="nav-item profile">
-    <i class="bi bi-person-badge"></i>
+ 
     <span class="nav-text">Admin</span>
   </div>
 
-  <div class="nav-item">
+
+  <a class="nav-item " routerLink="/admin/profile" routerLinkActive="active">
+    <i class="bi bi-person-badge"></i>
+    <span class="nav-text">Profile</span>
+  </a>
+
+  <a class="nav-item" routerLink="/admin/dashboard" routerLinkActive="active">
     <i class="bi bi-house"></i>
     <span class="nav-text">Dashboard</span>
-  </div>
+  </a>
 
-  <div class="nav-item">
+  <a class="nav-item" routerLink="/admin/addemployee" routerLinkActive="active">
     <i class="bi bi-people"></i>
     <span class="nav-text">Employees</span>
-  </div>
+  </a>
 
-  <div class="nav-item">
+  <a class="nav-item" routerLink="/admin/tasks" routerLinkActive="active">
+    <i class="bi bi-list-task"></i>
+    <span class="nav-text">Tasks</span>
+  </a>
+
+  <a class="nav-item" routerLink="/admin/leaves" routerLinkActive="active">
+    <i class="bi bi-calendar2-check"></i>
+    <span class="nav-text">Leave</span>
+  </a>
+
+  <a class="nav-item" routerLink="/admin/reports" routerLinkActive="active">
     <i class="bi bi-clipboard-data"></i>
     <span class="nav-text">Reports</span>
+  </a>
+
+  <a class="nav-item " routerLink="/admin/documents" routerLinkActive="active">
+    <i class="bi bi-file-earmark-text"></i>
+    <span class="nav-text">Documents</span>
+  </a>
+
+  <div class="nav-item bottom" (click)="logout()">
+    <i class="bi bi-box-arrow-right"></i>
+    <span class="nav-text">Logout</span>
   </div>
 
-  <div class="nav-item bottom">
-    <i class="bi bi-gear"></i>
-    <span class="nav-text">Settings</span>
-  </div>
 </nav>

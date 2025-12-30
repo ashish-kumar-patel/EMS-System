@@ -1,0 +1,44 @@
+<button class="btn btn-success mb-3" (click)="openForm()">+ Apply Leave</button>
+
+<!-- Popup
+<app-apply-leave-popup
+    *ngIf="showPopup"
+    (close)="closeForm()">
+</app-apply-leave-popup> -->
+
+<app-leavepopup  *ngIf="showPopup"
+    (close)="closeForm()" ></app-leavepopup>
+
+<!-- Table -->
+<div class="table-responsive">
+  <table class="table table-bordered table-hover text-center">
+    <thead class="table-dark">
+      <tr>
+        <th>Leave Type</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Reason</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let l of leaves">
+        <td>{{ l.leaveType }}</td>
+        <td>{{ l.fromDate }}</td>
+        <td>{{ l.toDate }}</td>
+        <td>{{ l.reason }}</td>
+        <td>
+          <span class="badge"
+            [ngClass]="{
+                        'bg-warning': l.status=='Pending',
+                        'bg-success': l.status=='Approved',
+                        'bg-danger': l.status=='Rejected'
+                       }">
+            {{ l.status }}
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

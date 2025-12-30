@@ -11,6 +11,7 @@ import { SearchEmployee } from '@interfaces/searchemp';
 export class AddemployeeComponent {
 
   viewMode: 'grid' | 'list' = 'grid';
+  showRegister = false;
 
   filterForm!: FormGroup;
 
@@ -92,6 +93,9 @@ export class AddemployeeComponent {
     });
   }
 
+  closePopup() {
+  this.showRegister = false;
+}
   applyFilter() {
     const f = this.filterForm.value;
 
